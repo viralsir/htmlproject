@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+     document.addEventListener('DOMContentLoaded',function(){
+
+       // change the color red on red button click
+        document.getElementById("red").onclick=function(){
+          let heading=document.getElementById("heading");
+          heading.style.color='red';
+          heading.style.backgroundColor='yellow';
+        }
+
+      // change the color red on red button click
+        document.getElementById("blue").onclick=function(){
+          document.getElementById("heading").style.color='blue';
+        }
+
+        // change the color red on red button click
+        document.getElementById("green").onclick=function(){
+          document.getElementById("heading").style.color='green';
+        }
+
+
+     })
+
+
+
+
+  </script>
+</head>
+<body>
+   <h1 id="heading"> Hello </h1>
+    <input type="button" value="red" id="red">
+    <input type="button" value="green" id="green">
+    <input type="button" value="blue" id="blue">
+
+
+</body>
+</html>
