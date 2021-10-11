@@ -6,24 +6,11 @@
   <script>
      document.addEventListener('DOMContentLoaded',function(){
 
-       // change the color red on red button click
-        document.getElementById("red").onclick=function(){
-          let heading=document.getElementById("heading");
-          heading.style.color='red';
-          heading.style.backgroundColor='yellow';
-        }
-
-      // change the color red on red button click
-        document.getElementById("blue").onclick=function(){
-          document.getElementById("heading").style.color='blue';
-        }
-
-        // change the color red on red button click
-        document.getElementById("green").onclick=function(){
-          document.getElementById("heading").style.color='green';
-        }
-
-
+             document.querySelectorAll("button").forEach(button=>{
+                   button.onclick=function(){
+                     document.getElementById("heading").style.color=button.dataset.color;
+                   }
+             })
      })
 
 
@@ -33,10 +20,9 @@
 </head>
 <body>
    <h1 id="heading"> Hello </h1>
-    <input type="button" value="red" id="red">
-    <input type="button" value="green" id="green">
-    <input type="button" value="blue" id="blue">
-
-
+    <button data-color="red">Red</button>
+    <button data-color="green">green</button>
+    <button data-color="blue">blue</button>
+    <button data-color="pink">pink</button>
 </body>
 </html>
