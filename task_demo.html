@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task demo</title>
+  <script>
+    document.addEventListener('DOMContentLoaded',function (){
+
+      document.getElementById("submit").disabled=true;
+
+       document.getElementById("task").onkeyup=function (){
+
+         if(document.getElementById("task").value.length>0)
+         {
+            document.getElementById("submit").disabled=false;
+         }
+         else
+         {
+           document.getElementById("submit").disabled=true;
+         }
+
+
+       }
+
+        document.querySelector("form").onsubmit=function (){
+           let li=document.createElement("li");
+           li.innerHTML="<input type=checkbox >"+document.getElementById("task").value;
+
+           let ul=document.getElementById("tasks");
+           ul.append(li);
+
+          document.getElementById("task").value="";
+          document.getElementById("submit").disabled=true;
+           return false;
+        }
+    })
+  </script>
+</head>
+<body>
+    <h1 id="head"> Task list </h1>
+    <ul id="tasks">
+
+    </ul>
+    <form >
+      <input type="text" id="task" placeholder="new task">
+      <input type="submit"  id="submit"  value="add">
+    </form>
+
+</body>
+</html>
