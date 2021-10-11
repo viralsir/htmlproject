@@ -6,11 +6,10 @@
   <script>
      document.addEventListener('DOMContentLoaded',function(){
 
-             document.querySelectorAll("button").forEach(button=>{
-                   button.onclick=function(){
-                     document.getElementById("heading").style.color=button.dataset.color;
-                   }
-             })
+             document.querySelector("select").onchange=function (){
+
+               document.getElementById("heading").style.color=this.value;
+             }
      })
 
 
@@ -20,9 +19,13 @@
 </head>
 <body>
    <h1 id="heading"> Hello </h1>
-    <button data-color="red">Red</button>
-    <button data-color="green">green</button>
-    <button data-color="blue">blue</button>
-    <button data-color="pink">pink</button>
+   <select >
+     <option value="red">Red</option>
+     <option value="green">Green</option>
+     <option value="blue">blue</option>
+     <option value="pink">pink</option>
+      <option value="yellow">yellow</option>
+
+   </select>
 </body>
 </html>
